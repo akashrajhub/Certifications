@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certifications | Akash Raj</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-soft: #14b8a6;
+      --primary-light: #e0f2f1;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --bg-page: #f9fefe;
+      --white: #ffffff;
+      --radius: 20px;
+      --shadow: 0 20px 40px rgba(15,118,110,0.12);
+      --shadow-hover: 0 25px 50px rgba(15,118,110,0.2);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-page);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    /* ======================== HERO ======================== */
+    header.hero {
+        position: relative;
+        overflow: hidden;
+        color: #f9fafb;
+        text-align: center;
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Background Image Animation */
+    header.hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("images/Hero-Real-Estate.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: brightness(0.78) contrast(1.05);
+        z-index: -2;
+        animation: heroZoom 22s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroZoom {
+        0%   { transform: scale(1); }
+        100% { transform: scale(1.06); }
+    }
+
+    /* Gradient Overlay */
+    header.hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(15,118,110,0.65), rgba(15,23,42,0.85));
+        z-index: -1;
+    }
+
+    /* HERO TEXT ANIMATION */
+    .hero-content {
+        max-width: 800px;
+        padding: 3.5rem 2rem 3rem;
+        position: relative;
+        animation: fadeUp 1s ease-out both, float 6s ease-in-out infinite;
+    }
+
+    @keyframes fadeUp {
+        0% { opacity:0; transform:translateY(30px); }
+        100% { opacity:1; transform:translateY(0); }
+    }
+
+    @keyframes float {
+        0%,100% { transform:translateY(0px); }
+        50% { transform:translateY(-10px); }
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.8rem, 5vw, 3.5rem);
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .hero-sub {
+        font-size: 1.2rem;
+        font-weight: 300;
+        opacity: 0.9;
+        margin-top: 0.6rem;
+    }
+
+    /* ======================== MAIN WRAPPER ======================== */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.8rem;
+    }
+
+    /* SECTION APPEAR ANIMATION */
+    .section-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.4);
+
+      opacity: 0;
+      transform: translateY(40px) scale(0.98);
+      transition: all 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+
+    .section-card.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 5px;
+      height: 26px;
+      border-radius: 5px;
+      background: linear-gradient(180deg, var(--primary-soft), var(--primary));
+    }
+
+    /* ======================== LIST ======================== */
+    .cert-list {
+      margin-left: 1.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .cert-list li {
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+    }
+
+    .cert-list a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .cert-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* ======================== CERTIFICATE IMAGES ======================== */
+    .cert-image {
+        width: 100%;
+        max-width: 650px;
+        margin: 1.2rem auto;
+        display: block;
+        border-radius: 18px;
+        border: 2px solid rgba(14,164,158,0.35);
+        background: #F0FAF9;
+        padding: 1.5rem;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        transition: transform .35s ease, box-shadow .35s ease;
+    }
+
+    .cert-image:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 28px 55px rgba(0,0,0,0.12);
+    }
+
+    /* ======================== FOOTER ======================== */
+     
+    footer {
+  background: #0f172a;
+  padding: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  color: #cbd5e1;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-icons a {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbd5e1;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-icons a:hover {
+  background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(15,118,110,0.4);
+}
+
+
+    /* ======================== MOBILE ======================== */
+    @media (max-width: 768px) {
+      header.hero { min-height: 320px; }
+      .hero-content h1 { font-size: 2.2rem; }
+      .section-card { padding: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+        <h1>Certifications</h1>
+        <p class="hero-sub">Verified Credentials • Professional Learning Journey</p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Table of Contents -->
+    <section class="section-card">
+      <h2 class="section-title"><i class="fas fa-certificate"></i> Achievements & Certifications</h2>
+
+      <ul class="cert-list">
+        <li><a href="https://coursera.org/verify/professional-cert/WGJEARWYGNZY" target="_blank">Google Advanced Data Analytics – Professional Certificate </a></li>
+        <li><a href="https://coursera.org/verify/professional-cert/SJ95UVUDRH61" target="_blank">Microsoft Data Visualization – Certificate</a></li>
+        <li><a href="https://coursera.org/verify/specialization/E0XEL6TZSI6L" target="_blank">Tableau Data Visualization – Specialization</a></li>
+        <li><a href="https://coursera.org/verify/specialization/G5L9VBUZNH6A" target="_blank">Statistics with Python – Specialization</a></li>
+        <li><a href="https://coursera.org/verify/C6SZD2TL1XW8" target="_blank">Data Analysis with Python – IBM Certificate</a></li>
+        <li><a href="https://coursera.org/verify/specialization/MNTFVVP70S3R" target="_blank">Google AI Essentials – Specialization</a></li>
+        <li><a href="https://upskill.tutedude.com/certificate/TD-AKAS-DA-1514" target="_blank">Tutedude Data Analytics – Certificate</a></li>
+      </ul>
+    </section>
+
+    <!-- Certificate Sections -->
+    <section id="cert1" class="section-card">
+      <h2 class="section-title">Google Advanced Data Analytics – Professional Certificate</h2>
+      <img src="images/1.Google Advance Data Analytics.png" class="cert-image">
+    </section>
+
+    <section id="cert2" class="section-card">
+      <h2 class="section-title">Microsoft Data Visualization – Certificate</h2>
+      <img src="images/2.Microsoft Data Visualization.png" class="cert-image">
+    </section>
+
+    <section id="cert3" class="section-card">
+      <h2 class="section-title">Tableau Data Visualization – Specialization</h2>
+      <img src="images/3.Data Visualization with Tableau.png" class="cert-image">
+    </section>
+
+    <section id="cert4" class="section-card">
+      <h2 class="section-title">Statistics with Python – Specialization</h2>
+      <img src="images/4.Statistics with Python.png" class="cert-image">
+    </section>
+
+    <section id="cert5" class="section-card">
+      <h2 class="section-title">Data Analysis with Python – IBM Certificate</h2>
+      <img src="images/5.Data Analysis with Python.png" class="cert-image">
+    </section>
+
+    <section id="cert6" class="section-card">
+      <h2 class="section-title">Google AI Essentials – Specialization</h2>
+      <img src="images/6.Google AI Essentials.png" class="cert-image">
+    </section>
+   
+    <section id="cert7" class="section-card">
+      <h2 class="section-title">Tutedude Data Analytics – Certificate</h2>
+      <img src="images/7.Data Analyst TUTEDUDE.png" class="cert-image">
+    </section>
+
+  </main>
+
+ <footer>
+  <p>© 2026 Akash Raj — Achievements & Certifications</p>
+
+  <div class="footer-icons">
+    <a href="https://akashrajhub.github.io/"  aria-label="Home">
+      <i class="fas fa-home"></i>
+    </a>
+
+    <a href="https://github.com/akashrajhub" target="_blank" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/akash-raj-profile/" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+</footer>
+
+
+  <script>
+    /* Section Reveal Animation */
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add("visible");
+            }, index * 120);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".section-card").forEach((sec) => observer.observe(sec));
+  </script>
+
+</body>
+</html>
