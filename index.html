@@ -160,6 +160,34 @@
       background: linear-gradient(180deg, var(--primary-soft), var(--primary));
     }
 
+    /* ======================== SKILL CHIPS ======================== */
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.skill-chips span {
+  padding: 0.55rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--primary-light), #d1faf5);
+  color: var(--primary);
+  border: 1px solid rgba(14,164,158,0.35);
+  box-shadow: 0 4px 15px rgba(15,118,110,0.12);
+  cursor: default;
+  transition: all 0.3s ease;
+}
+
+.skill-chips span:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, var(--primary), var(--primary-soft));
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(15,118,110,0.25);
+}
+
     /* ======================== LIST ======================== */
     .cert-list {
       margin-left: 1.5rem;
@@ -273,6 +301,33 @@
         <li><a href="https://upskill.tutedude.com/certificate/TD-AKAS-DA-1514" target="_blank">Tutedude Data Analytics – Certificate</a></li>
       </ul>
     </section>
+    <section class="section-card">
+  <h2 class="section-title">
+    <i class="fas fa-bolt"></i> Skills Strengthened
+  </h2>
+
+  <div class="skill-chips">
+    <span>Python</span>
+    <span>Pandas</span>
+    <span>NumPy</span>
+    <span>Scikit-learn</span>
+    <span>Machine Learning</span>
+    <span>Regression Models</span>
+    <span>Classification Models</span>
+    <span>Data Cleaning</span>
+    <span>Feature Engineering</span>
+    <span>Statistics</span>
+    <span>EDA</span>
+    <span>Data Visualization</span>
+    <span>Power BI</span>
+    <span>Tableau</span>
+    <span>Advance Excel</span>
+    <span>BI Storytelling</span>
+    <span>Model Evaluation</span>
+    <span>Risk Analysis</span>
+  </div>
+</section>
+
 
     <!-- Certificate Sections -->
     <section id="cert1" class="section-card">
@@ -352,3 +407,4 @@
 
 </body>
 </html>
+
