@@ -161,32 +161,58 @@
     }
 
     /* ======================== SKILL CHIPS ======================== */
-.skill-chips {
+.skill-group {
+  margin-bottom: 2rem;
+}
+
+.skill-group h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.skills-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-top: 1.5rem;
+  gap: 0.6rem;
 }
 
-.skill-chips span {
-  padding: 0.55rem 1.2rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border-radius: 30px;
-  background: linear-gradient(135deg, var(--primary-light), #d1faf5);
+.skill-chip {
+  display: inline-block;
+  padding: 0.45rem 1.2rem;
+  background: #e6faf8;
   color: var(--primary);
-  border: 1px solid rgba(14,164,158,0.35);
-  box-shadow: 0 4px 15px rgba(15,118,110,0.12);
-  cursor: default;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  border: 1px solid #b5ece6;
+  white-space: nowrap;
 }
 
-.skill-chips span:hover {
-  transform: translateY(-3px);
+.skill-chip {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: #e6faf8;
+  color: var(--primary);
+  font-weight: 500;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: 1px solid #b5ece6;
+  white-space: nowrap;
+  transition: all 0.28s ease;  /* IMPORTANT */
+  cursor: default;            /* Optional */
+}
+
+/* ⭐ Hover Animation (smooth lift + shadow) */
+.skill-chip:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(15,118,110,0.4);
   background: linear-gradient(135deg, var(--primary), var(--primary-soft));
   color: #ffffff;
-  box-shadow: 0 12px 30px rgba(15,118,110,0.25);
+  border-color: var(--primary-soft);
 }
+
 
     /* ======================== LIST ======================== */
     .cert-list {
@@ -306,32 +332,78 @@
     <i class="fas fa-bolt"></i> Skills Strengthened
   </h2>
 
-  <div class="skill-chips">
-    <span>SQL</span>
-    <span>Python</span>
-    <span>Pandas</span>
-    <span>NumPy</span>
-    <span>Scikit-learn</span>
-    <span>Machine Learning</span>
-    <span>Regression Models</span>
-    <span>Classification Models</span>
-    <span>Data Cleaning</span>
-    <span>Feature Engineering</span>
-    <span>Statistics</span>
-    <span>EDA</span>
-    <span>DAX</span>
-    <span>ETL & Data Pipelines</span>
-    <span>Dashboard Design Principles</span>
-    <span>Prompt Engineering</span>
-    <span>Data Visualization</span>
-    <span>Power BI</span>
-    <span>Tableau</span>
-    <span>Advance Excel</span>
-    <span>BI Storytelling</span>
-    <span>Model Evaluation</span>
-    <span>Risk Analysis</span>
+  <section class="section-card">
+  <h2 class="section-title">
+    <i class="fas fa-bolt"></i> Skills Strengthened
+  </h2>
+
+  <!-- PYTHON -->
+  <div class="skill-group">
+    <h3>Python Skills</h3>
+    <div class="skills-row">
+      <span class="skill-chip">Pandas</span>
+      <span class="skill-chip">NumPy</span>
+      <span class="skill-chip">Scikit-learn</span>
+      <span class="skill-chip">Data Cleaning</span>
+      <span class="skill-chip">Feature Engineering</span>
+      <span class="skill-chip">Model Evaluation</span>
+    </div>
   </div>
+
+  <!-- SQL -->
+  <div class="skill-group">
+    <h3>SQL Skills</h3>
+    <div class="skills-row">
+      <span class="skill-chip">Aggregations</span>
+      <span class="skill-chip">Joins</span>
+      <span class="skill-chip">Query Optimization</span>
+      <span class="skill-chip">ETL Support</span>
+      <span class="skill-chip">Indexing</span>
+      <span class="skill-chip">Window Functions</span>
+    </div>
+  </div>
+
+  <!-- MACHINE LEARNING -->
+  <div class="skill-group">
+    <h3>Machine Learning Skills</h3>
+    <div class="skills-row">
+      <span class="skill-chip">Regression Models</span>
+      <span class="skill-chip">Classification Models</span>
+      <span class="skill-chip">Statistics</span>
+      <span class="skill-chip">EDA</span>
+      <span class="skill-chip">Risk Analysis</span>
+      <span class="skill-chip">Model evaluation</span>
+    </div>
+  </div>
+
+  <!-- BI / VISUALIZATION -->
+  <div class="skill-group">
+    <h3>BI & Visualization Skills</h3>
+    <div class="skills-row">
+      <span class="skill-chip">Power BI</span>
+      <span class="skill-chip">DAX</span>
+      <span class="skill-chip">Data Modeling</span>
+      <span class="skill-chip">Dashboard Design</span>
+      <span class="skill-chip">BI Storytelling</span>
+      <span class="skill-chip">Tableau</span>
+      <span class="skill-chip">Data Visualization</span>
+    </div>
+  </div>
+
+  <!-- ETL -->
+  <div class="skill-group">
+    <h3>ETL & Analytics Skills</h3>
+    <div class="skills-row">
+      <span class="skill-chip">ETL Pipelines</span>
+      <span class="skill-chip">Data Engineering Workflows</span>
+      <span class="skill-chip">Prompt Engineering</span>
+      <span class="skill-chip">Advanced Excel</span>
+      <span class="skill-chip">Data Quality Validation</span>
+    </div>
+  </div>
+
 </section>
+
 
 
     <!-- Certificate Sections -->
@@ -412,6 +484,7 @@
 
 </body>
 </html>
+
 
 
 
