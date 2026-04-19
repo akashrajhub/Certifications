@@ -4,441 +4,808 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Certifications | Akash Raj</title>
+  <meta name="description" content="Verified certifications and credentials of Akash Raj — Data Analyst & BI Specialist." />
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Fonts: Sora + DM Sans (matches homepage) -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    /* ── DESIGN TOKENS (mirror homepage) ── */
     :root {
-      --primary: #0f766e;
-      --primary-soft: #14b8a6;
-      --primary-light: #e0f2f1;
-      --text-dark: #0f172a;
-      --text-muted: #64748b;
-      --bg-page: #f9fefe;
-      --white: #ffffff;
-      --radius: 20px;
-      --shadow: 0 20px 40px rgba(15,118,110,0.12);
-      --shadow-hover: 0 25px 50px rgba(15,118,110,0.2);
+      --primary:       #0f766e;
+      --primary-dark:  #0d5a56;
+      --primary-light: #ccfbf1;
+      --accent:        #2563eb;
+      --accent-warm:   #f59e0b;
+      --text-dark:     #0c1a1a;
+      --text-muted:    #52737a;
+      --bg:            #f0faf8;
+      --white:         #ffffff;
+      --border:        #d1ece7;
+      --radius:        18px;
+      --radius-sm:     10px;
+      --header-height: 72px;
+      --card-shadow:   0 4px 24px rgba(15,118,110,0.08);
+      --card-hover:    0 16px 48px rgba(15,118,110,0.18);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: "Poppins", sans-serif;
-      background: var(--bg-page);
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
       color: var(--text-dark);
       line-height: 1.7;
+      overflow-x: hidden;
+      padding-top: var(--header-height);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-      transition: 0.3s ease;
+    a { text-decoration: none; color: var(--primary); transition: color 0.2s; }
+
+    /* ── HEADER (identical to homepage) ── */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 1000;
+      height: var(--header-height);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    header.scrolled { box-shadow: 0 2px 24px rgba(15,118,110,0.10); }
+
+    .nav-container {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 2rem; height: 100%;
+      display: flex; align-items: center; justify-content: space-between;
     }
 
-    /* ======================== HERO ======================== */
-    header.hero {
-        position: relative;
-        overflow: hidden;
-        color: #f9fafb;
-        text-align: center;
-        min-height: 420px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .logo {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800; font-size: 1.35rem;
+      background: linear-gradient(135deg, var(--primary) 0%, #0ea5e9 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
     }
 
-    header.hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("images/Hero-Real-Estate.png");
-        background-size: cover;
-        background-position: center;
-        filter: brightness(0.78) contrast(1.05);
-        z-index: -2;
-        animation: heroZoom 22s ease-in-out infinite alternate;
-    }
-
-    @keyframes heroZoom {
-        0%   { transform: scale(1); }
-        100% { transform: scale(1.06); }
-    }
-
-    header.hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(15,118,110,0.65), rgba(15,23,42,0.85));
-        z-index: -1;
-    }
-
-    .hero-content {
-        max-width: 800px;
-        padding: 3.5rem 2rem 3rem;
-        animation: fadeUp 1s ease-out both, float 6s ease-in-out infinite;
-    }
-
-    @keyframes fadeUp {
-        0% { opacity:0; transform:translateY(30px); }
-        100% { opacity:1; transform:translateY(0); }
-    }
-
-    @keyframes float {
-        0%,100% { transform:translateY(0px); }
-        50% { transform:translateY(-10px); }
-    }
-
-    .hero-content h1 {
-        font-size: clamp(2.8rem, 5vw, 2rem);
-        font-weight: 700;
-        margin-bottom: 0.8rem;
-        text-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-
-    .hero-sub {
-        font-size: 1.2rem;
-        opacity: 0.9;
-        margin-top: 0.6rem;
-    }
-
-    /* ======================== MAIN ======================== */
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 4rem 1.8rem;
-    }
-
-    /* ======================== SCROLL REVEAL (FIXED) ======================== */
-    .section-card,
-    .cert-card {
-      opacity: 0;
-      transform: translateY(40px) scale(0.98);
-      transition: all 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
-    }
-
-    .section-card.visible,
-    .cert-card.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    /* ======================== SECTION CARD ======================== */
-    .section-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 3rem 2.5rem;
-      margin-bottom: 3rem;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.4);
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-
-    .section-title::before {
-      content: "";
-      width: 5px;
-      height: 26px;
-      background: linear-gradient(180deg, var(--primary-soft), var(--primary));
-      border-radius: 5px;
-    }
-
-    /* ======================== CERTIFICATION CARD ======================== */
-    .cert-card {
-      background: var(--white);
-      border-radius: 22px;
-      padding: 2.5rem;
-      margin-bottom: 3rem;
-      border: 1px solid #e7f6f4;
-      box-shadow: 0 8px 25px rgba(15,118,110,0.08);
-      transition: 0.35s ease;
-    }
-
-    .cert-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 42px rgba(15,118,110,0.15);
-    }
-
-    .cert-meta {
+    nav { display: flex; align-items: center; gap: 0.25rem; }
+    nav a {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-weight: 500; font-size: 0.95rem;
+      padding: 0.45rem 0.85rem; border-radius: 8px;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover { color: var(--primary); background: var(--primary-light); }
+    nav a.active { color: var(--primary); background: var(--primary-light); }
+    .nav-cta {
+      margin-left: 0.5rem;
+      background: var(--primary); color: white !important;
+      padding: 0.45rem 1.1rem !important; border-radius: 8px;
+    }
+    .nav-cta:hover { background: var(--primary-dark) !important; }
+
+    /* ── HERO ── */
+    .page-hero {
+      position: relative;
+      min-height: 380px;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background-image: url("images/Hero-Real-Estate.png");
+      background-size: cover; background-position: center;
+      z-index: 1;
+      animation: heroZoom 24s ease-in-out infinite alternate;
+    }
+    @keyframes heroZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.06); }
+    }
+    .page-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(7,60,55,0.75) 0%, rgba(2,20,18,0.68) 100%);
+      z-index: 2;
+    }
+    .page-hero-content {
+      position: relative; z-index: 3;
+      max-width: 700px; padding: 0 2rem;
+      animation: fadeInUp 0.9s ease both;
+    }
+    .page-hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.9);
+      padding: 0.4rem 1rem; border-radius: 100px;
+      font-size: 0.82rem; font-weight: 500;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(8px);
+    }
+    .page-hero-badge i { color: var(--accent-warm); }
+    .page-hero-content h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800; letter-spacing: -0.03em;
+      color: #fff; line-height: 1.1;
+      margin-bottom: 0.85rem;
+    }
+    .page-hero-content h1 span {
+      background: linear-gradient(90deg, #5eead4, #7dd3fc);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-hero-content p {
+      color: rgba(255,255,255,0.78);
+      font-size: 1.1rem;
+    }
+
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-strip .container {
+      display: flex; flex-wrap: wrap;
+      justify-content: center; align-items: stretch; gap: 0;
+    }
+    .stat-item {
+      flex: 1 1 160px; padding: 1.75rem 1.5rem;
+      text-align: center; border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.8rem; font-weight: 800;
+      color: var(--primary); letter-spacing: -0.03em;
+    }
+    .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 0.15rem; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 5rem 0; }
+
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--primary);
+      background: var(--primary-light);
+      padding: 0.3rem 0.85rem; border-radius: 100px; margin-bottom: 1rem;
+    }
+    .section-header h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800; letter-spacing: -0.03em;
+    }
+    .section-header p { color: var(--text-muted); font-size: 1rem; margin-top: 0.6rem; }
+
+    /* ── QUICK LINKS TABLE OF CONTENTS ── */
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.85rem;
+    }
+    .toc-item {
+      display: flex; align-items: center; gap: 0.85rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.9rem 1.25rem;
+      transition: all 0.25s;
+      color: var(--text-dark);
+      font-weight: 500; font-size: 0.92rem;
+    }
+    .toc-item:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+      transform: translateX(4px);
+      box-shadow: var(--card-shadow);
+    }
+    .toc-num {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.75rem; font-weight: 700;
+    }
+    .toc-item:hover .toc-num { background: var(--primary); color: white; }
+    .toc-issuer { color: var(--text-muted); font-size: 0.78rem; font-weight: 400; display: block; margin-top: 0.1rem; }
+
+    /* ── CERT CARDS SECTION ── */
+    #certifications { background: var(--white); }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .cert-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      box-shadow: var(--card-shadow);
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s, border-color 0.3s;
+    }
+    .cert-card.visible { opacity: 1; transform: translateY(0); }
+    .cert-card:hover { transform: translateY(-6px); box-shadow: var(--card-hover); border-color: var(--primary); }
+
+    /* Issuer color accent bar */
+    .cert-card-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), #0ea5e9);
+    }
+    .cert-card:nth-child(2) .cert-card-bar { background: linear-gradient(90deg, #2563eb, #7c3aed); }
+    .cert-card:nth-child(3) .cert-card-bar { background: linear-gradient(90deg, #0891b2, #0ea5e9); }
+    .cert-card:nth-child(4) .cert-card-bar { background: linear-gradient(90deg, #7c3aed, #db2777); }
+    .cert-card:nth-child(5) .cert-card-bar { background: linear-gradient(90deg, #0369a1, #0891b2); }
+    .cert-card:nth-child(6) .cert-card-bar { background: linear-gradient(90deg, var(--primary), #059669); }
+    .cert-card:nth-child(7) .cert-card-bar { background: linear-gradient(90deg, #d97706, #f59e0b); }
+
+    .cert-card-inner { padding: 1.75rem; display: flex; flex-direction: column; flex: 1; }
+
+    .cert-card-header {
+      display: flex; align-items: flex-start; gap: 1rem;
       margin-bottom: 1rem;
     }
-
-    .cert-skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      margin: 1rem 0 1.5rem;
+    .cert-issuer-badge {
+      flex-shrink: 0;
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; font-weight: 700;
+      font-family: 'Sora', sans-serif;
     }
+    /* Issuer colors */
+    .badge-google  { background: #e8f5e9; color: #1b5e20; }
+    .badge-microsoft { background: #e3f2fd; color: #0d47a1; }
+    .badge-tableau { background: #e0f7fa; color: #006064; }
+    .badge-michigan { background: #f3e5f5; color: #4a148c; }
+    .badge-ibm     { background: #e1f5fe; color: #01579b; }
+    .badge-tuted   { background: #fff8e1; color: #e65100; }
 
-    .skill-chip {
-      padding: 0.45rem 1.1rem;
-      border-radius: 999px;
-      background: #ffffff;
+    .cert-title-wrap { flex: 1; min-width: 0; }
+    .cert-title-wrap h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      line-height: 1.3; color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+    .cert-meta-row {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap;
+    }
+    .cert-meta-row i { font-size: 0.7rem; color: var(--primary); }
+    .cert-verify-link {
+      font-size: 0.75rem; font-weight: 600;
       color: var(--primary);
-      border: 1px solid #b7ece5;
-      font-size: 0.88rem;
-      font-weight: 500;
-      transition: 0.25s ease;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.2rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: var(--white);
+      transition: all 0.2s;
+      margin-left: auto;
     }
+    .cert-verify-link:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
-    .skill-chip:hover {
-      background: linear-gradient(135deg, var(--primary), var(--primary-soft));
-      color: #fff;
-      box-shadow: 0 10px 25px rgba(15,118,110,0.4);
-      transform: translateY(-4px);
+    /* Skill chips */
+    .cert-chips {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin-bottom: 1.25rem;
     }
-
-    /* ======================== LIST ======================== */
-    .cert-list {
-      margin-left: 1.5rem;
-      margin-top: 0.8rem;
+    .chip {
+      font-size: 0.72rem; font-weight: 600;
+      padding: 0.25rem 0.65rem; border-radius: 100px;
+      background: var(--white); color: var(--primary);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
     }
+    .chip:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
-    .cert-list li {
-      margin-bottom: 0.6rem;
-      font-size: 1rem;
+    /* Certificate image */
+    .cert-img-wrap {
+      margin-top: auto;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--white);
+      position: relative;
     }
-
-    .cert-list a {
-      color: var(--primary);
-      font-weight: 600;
+    .cert-img-wrap img {
+      width: 100%; display: block;
+      transition: transform 0.4s ease;
     }
-    .cert-list a:hover { text-decoration: underline; }
-
-    /* ======================== CERTIFICATE IMAGE ======================== */
-    .cert-image {
-        width: 100%;
-        max-width: 650px;
-        margin: 1.2rem auto;
-        display: block;
-        border-radius: 18px;
-        border: 2px solid rgba(14,164,158,0.35);
-        background: #F0FAF9;
-        padding: 1.5rem;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        transition: transform .35s ease, box-shadow .35s ease;
+    .cert-card:hover .cert-img-wrap img { transform: scale(1.02); }
+    .cert-img-overlay {
+      position: absolute; inset: 0;
+      background: rgba(15,118,110,0); /* invisible by default */
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s;
     }
+    .cert-card:hover .cert-img-overlay { background: rgba(15,118,110,0.04); }
 
-    .cert-image:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 28px 55px rgba(0,0,0,0.12);
-    }
-
-    /* ======================== FOOTER ======================== */
+    /* ── FOOTER ── */
     footer {
-      background: #0f172a;
+      background: #0a3330;
+      color: #a8d5d1;
+      padding: 3rem 0 2rem;
+    }
+    .footer-inner {
+      max-width: 1000px; margin: 0 auto;
       padding: 2rem;
-      margin-top: 3rem;
-      text-align: center;
-      color: #cbd5e1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .footer-section h3 {
+      color: #e0f7f4; font-family: 'Sora', sans-serif;
+      font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .footer-section a, .footer-section p {
+      display: block; color: #a8d5d1;
+      font-size: 0.92rem; margin-bottom: 0.5rem;
+    }
+    .footer-section a:hover { color: #fff; }
+    .footer-section .open-to-chip {
+      display: inline-block;
+      background: rgba(94,234,212,0.12);
+      border: 1px solid rgba(94,234,212,0.25);
+      color: #5eead4; padding: 0.35rem 0.75rem;
+      border-radius: 100px; font-size: 0.78rem; font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    .footer-copy {
+      max-width: 1000px; margin: 1.5rem auto 0;
+      padding: 1rem 2rem 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.5rem;
+      font-size: 0.82rem; color: rgba(168,213,209,0.6);
     }
 
-    .footer-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-
-    .footer-icons a {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #cbd5e1;
-      transition: all 0.3s ease;
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
     }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    .footer-icons a:hover {
-      background: linear-gradient(135deg, var(--primary), var(--primary-soft));
-      color: #ffffff;
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 12px 30px rgba(15,118,110,0.4);
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .cert-grid { grid-template-columns: 1fr; }
     }
-
+    @media (max-width: 768px) {
+      :root { --header-height: 56px; }
+      .nav-container { padding: 0 1.25rem; }
+      nav a span { display: none; }
+      .nav-cta span { display: inline !important; }
+      nav a { padding: 0.4rem 0.6rem; }
+      .logo { font-size: 1.15rem; }
+      .toc-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .footer-copy { flex-direction: column; text-align: center; }
+      .stat-item { flex: 1 1 130px; padding: 1.4rem 0.75rem; border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-content">
-        <h1>Achievements & Certifications</h1>
-        <p class="hero-sub">Verified Credentials • Professional Learning Journey</p>
+  <!-- ── HEADER ── -->
+  <header id="site-header">
+    <div class="nav-container">
+      <a href="https://akashrajhub.github.io/" class="logo">AKASH RAJ</a>
+      <nav>
+        <a href="https://akashrajhub.github.io/#projects"><i class="fas fa-briefcase"></i> <span>Projects</span></a>
+        <a href="https://akashrajhub.github.io/#skills"><i class="fas fa-chart-line"></i> <span>Skills</span></a>
+        <a href="https://akashrajhub.github.io/#about"><i class="fas fa-user"></i> <span>About</span></a>
+        <a href="https://akashrajhub.github.io/Certifications/" class="active"><i class="fas fa-certificate"></i> <span>Certs</span></a>
+        <a href="https://akashrajhub.github.io/#contact" class="nav-cta"><i class="fas fa-envelope"></i> <span>Contact</span></a>
+      </nav>
     </div>
   </header>
 
-  <main>
-
-    <!-- Table of Contents -->
-    <section class="section-card">
-      <h2 class="section-title"><i class="fas fa-certificate"></i> Achievements & Certifications</h2>
-
-      <ul class="cert-list">
-        <li><a href="https://coursera.org/verify/professional-cert/WGJEARWYGNZY" target="_blank">Google Advanced Data Analytics – Professional Certificate </a></li>
-        <li><a href="https://coursera.org/verify/professional-cert/SJ95UVUDRH61" target="_blank">Microsoft Data Visualization – Specialization</a></li>
-        <li><a href="https://coursera.org/verify/specialization/E0XEL6TZSI6L" target="_blank">Tableau Data Visualization – Specialization</a></li>
-        <li><a href="https://coursera.org/verify/specialization/G5L9VBUZNH6A" target="_blank">Statistics with Python – Specialization</a></li>
-        <li><a href="https://coursera.org/verify/C6SZD2TL1XW8" target="_blank">Data Analysis with Python – IBM Certificate</a></li>
-        <li><a href="https://coursera.org/verify/specialization/MNTFVVP70S3R" target="_blank">Google AI Essentials – Specialization</a></li>
-        <li><a href="https://upskill.tutedude.com/certificate/TD-AKAS-DA-1514" target="_blank">Tutedude Data Analytics – Certificate</a></li>
-      </ul>
-    </section>
-
-    <!-- ===================== CERT CARDS ===================== -->
-
-    <section id="cert1" class="cert-card">
-      <h2 class="section-title">Google Advanced Data Analytics – Professional Certificate</h2>
-      <p class="cert-meta">Issued by Google • Dec 8, 2025</p>
-      <div class="cert-skills">
-        <span class="skill-chip">EDA</span>
-        <span class="skill-chip">Machine Learning</span>
-        <span class="skill-chip">Regression</span>
-        <span class="skill-chip">Logistic Regression</span>
-        <span class="skill-chip">Classification</span>
-        <span class="skill-chip">Statistics</span>
-        <span class="skill-chip">Data Science</span>
-        <span class="skill-chip">Feature Engineering</span>
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="page-hero-badge">
+        <i class="fas fa-shield-check"></i> All credentials verified
       </div>
-      <img src="images/1.Google Advance Data Analytics.png" class="cert-image">
-    </section>
+      <h1>Certifications &<br><span>Achievements</span></h1>
+      <p>7 verified credentials from Google, Microsoft, IBM, Tableau, and more.</p>
+    </div>
+  </section>
 
-    <section id="cert2" class="cert-card">
-      <h2 class="section-title">Microsoft Data Visualization – Specialization</h2>
-      <p class="cert-meta">Issued by Microsoft • Nov 26, 2025</p>
-      <div class="cert-skills">
-        <span class="skill-chip">Data Modeling</span>
-        <span class="skill-chip">Business Intelligence</span>
-        <span class="skill-chip">Data Visualization</span>
-        <span class="skill-chip">ETL</span>
-        <span class="skill-chip">Correlation Analysis</span>
-        <span class="skill-chip">Dashboard Design</span>
+  <!-- ── STATS STRIP ── -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stat-item reveal">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Verified Certifications</div>
       </div>
-      <img src="images/2.Microsoft Data Visualization.png" class="cert-image">
-    </section>
-
-    <section id="cert3" class="cert-card">
-      <h2 class="section-title">Tableau Data Visualization – Specialization</h2>
-      <p class="cert-meta">Issued by UC Davis • Nov 7, 2025</p>
-      <div class="cert-skills">
-        <span class="skill-chip">Tableau</span>
-        <span class="skill-chip">Visual Analytics</span>
-        <span class="skill-chip">EDA</span>
-        <span class="skill-chip">Dashboard Design</span>
-        <span class="skill-chip">Storyboards</span>
-        <span class="skill-chip">Interactive Viz</span>
+      <div class="stat-item reveal">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Issuing Organizations</div>
       </div>
-      <img src="images/3.Data Visualization with Tableau.png" class="cert-image">
-    </section>
-
-    <section id="cert4" class="cert-card">
-      <h2 class="section-title">Statistics with Python – Specialization</h2>
-      <p class="cert-meta">Issued by University of Michigan • Dec 19, 2025</p>
-      <div class="cert-skills">
-        <span class="skill-chip">Statistics</span>
-        <span class="skill-chip">Sampling</span>
-        <span class="skill-chip">Bayesian Inference</span>
-        <span class="skill-chip">Statistical Modeling</span>
-        <span class="skill-chip">Probability</span>
+      <div class="stat-item reveal">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Professional Certificates</div>
       </div>
-      <img src="images/4.Statistics with Python.png" class="cert-image">
-    </section>
-
-    <section id="cert5" class="cert-card">
-      <h2 class="section-title">Data Analysis with Python – IBM Certificate</h2>
-      <p class="cert-meta">Issued by IBM • Dec 26, 2025</p>
-      <div class="cert-skills">
-        <span class="skill-chip">Pandas</span>
-        <span class="skill-chip">NumPy</span>
-        <span class="skill-chip">Data Cleaning</span>
-        <span class="skill-chip">Matplotlib</span>
-        <span class="skill-chip">Seaborn</span>
-        <span class="skill-chip">EDA</span>
+      <div class="stat-item reveal">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Specializations</div>
       </div>
-      <img src="images/5.Data Analysis with Python.png" class="cert-image">
-    </section>
+    </div>
+  </div>
 
-    <section id="cert6" class="cert-card">
-      <h2 class="section-title">Google AI Essentials – Specialization</h2>
-      <p class="cert-meta">Issued by Google • Dec 15, 2025</p>
-      <div class="cert-skills">
-        <span class="skill-chip">Prompt Engineering</span>
-        <span class="skill-chip">AI Workflows</span>
-        <span class="skill-chip">LLM</span>
-        <span class="skill-chip">Automation</span>
-        <span class="skill-chip">AI Ethics</span>
+  <!-- ── TABLE OF CONTENTS ── -->
+  <section style="background: var(--bg); padding: 4rem 0 2rem;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Index</span>
+        <h2>Quick Jump</h2>
+        <p>Click any credential to jump straight to it.</p>
       </div>
-      <img src="images/6.Google AI Essentials.png" class="cert-image">
-    </section>
-
-    <section id="cert7" class="cert-card">
-      <h2 class="section-title">Tutedude Data Analytics – Certificate</h2>
-      <p class="cert-meta">Issued by Tutedude • Nov 11, 2025</p>
-      <div class="cert-skills">
-        <span class="skill-chip">Advance Excel</span>
-        <span class="skill-chip">SQL</span>
-        <span class="skill-chip">Python</span>
-        <span class="skill-chip">Data Cleaning</span>
-        <span class="skill-chip">Visualization</span>
+      <div class="toc-grid reveal">
+        <a href="#cert1" class="toc-item">
+          <span class="toc-num">1</span>
+          <div>Google Advanced Data Analytics – Professional Certificate<span class="toc-issuer">Google · Dec 2025</span></div>
+        </a>
+        <a href="#cert2" class="toc-item">
+          <span class="toc-num">2</span>
+          <div>Microsoft Data Visualization – Specialization<span class="toc-issuer">Microsoft · Nov 2025</span></div>
+        </a>
+        <a href="#cert3" class="toc-item">
+          <span class="toc-num">3</span>
+          <div>Tableau Data Visualization – Specialization<span class="toc-issuer">UC Davis · Nov 2025</span></div>
+        </a>
+        <a href="#cert4" class="toc-item">
+          <span class="toc-num">4</span>
+          <div>Statistics with Python – Specialization<span class="toc-issuer">Univ. of Michigan · Dec 2025</span></div>
+        </a>
+        <a href="#cert5" class="toc-item">
+          <span class="toc-num">5</span>
+          <div>Data Analysis with Python – IBM Certificate<span class="toc-issuer">IBM · Dec 2025</span></div>
+        </a>
+        <a href="#cert6" class="toc-item">
+          <span class="toc-num">6</span>
+          <div>Google AI Essentials – Specialization<span class="toc-issuer">Google · Dec 2025</span></div>
+        </a>
+        <a href="#cert7" class="toc-item">
+          <span class="toc-num">7</span>
+          <div>Tutedude Data Analytics – Certificate<span class="toc-issuer">Tutedude · Nov 2025</span></div>
+        </a>
       </div>
-      <img src="images/7.Data Analyst TUTEDUDE.png" class="cert-image">
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <!-- ── CERT CARDS ── -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Credentials</span>
+        <h2>Verified Certifications</h2>
+        <p>Every certificate is linked to its official verification page.</p>
+      </div>
 
+      <div class="cert-grid">
+
+        <!-- 1. Google Advanced Data Analytics -->
+        <div id="cert1" class="cert-card">
+          <div class="cert-card-bar"></div>
+          <div class="cert-card-inner">
+            <div class="cert-card-header">
+              <div class="cert-issuer-badge badge-google">G</div>
+              <div class="cert-title-wrap">
+                <h3>Google Advanced Data Analytics</h3>
+                <div class="cert-meta-row">
+                  <i class="fas fa-building"></i> Google &nbsp;·&nbsp;
+                  <i class="fas fa-calendar"></i> Dec 8, 2025 &nbsp;·&nbsp;
+                  <i class="fas fa-award"></i> Professional Certificate
+                </div>
+              </div>
+              <a href="https://coursera.org/verify/professional-cert/WGJEARWYGNZY" target="_blank" class="cert-verify-link">
+                <i class="fas fa-external-link-alt"></i> Verify
+              </a>
+            </div>
+            <div class="cert-chips">
+              <span class="chip">EDA</span>
+              <span class="chip">Machine Learning</span>
+              <span class="chip">Regression</span>
+              <span class="chip">Logistic Regression</span>
+              <span class="chip">Classification</span>
+              <span class="chip">Statistics</span>
+              <span class="chip">Data Science</span>
+              <span class="chip">Feature Engineering</span>
+            </div>
+            <div class="cert-img-wrap">
+              <img src="images/1.Google Advance Data Analytics.png" alt="Google Advanced Data Analytics Certificate" loading="lazy" />
+              <div class="cert-img-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Microsoft Data Visualization -->
+        <div id="cert2" class="cert-card">
+          <div class="cert-card-bar"></div>
+          <div class="cert-card-inner">
+            <div class="cert-card-header">
+              <div class="cert-issuer-badge badge-microsoft">M</div>
+              <div class="cert-title-wrap">
+                <h3>Microsoft Data Visualization</h3>
+                <div class="cert-meta-row">
+                  <i class="fas fa-building"></i> Microsoft &nbsp;·&nbsp;
+                  <i class="fas fa-calendar"></i> Nov 26, 2025 &nbsp;·&nbsp;
+                  <i class="fas fa-layer-group"></i> Specialization
+                </div>
+              </div>
+              <a href="https://coursera.org/verify/professional-cert/SJ95UVUDRH61" target="_blank" class="cert-verify-link">
+                <i class="fas fa-external-link-alt"></i> Verify
+              </a>
+            </div>
+            <div class="cert-chips">
+              <span class="chip">Data Modeling</span>
+              <span class="chip">Business Intelligence</span>
+              <span class="chip">Data Visualization</span>
+              <span class="chip">ETL</span>
+              <span class="chip">Correlation Analysis</span>
+              <span class="chip">Dashboard Design</span>
+            </div>
+            <div class="cert-img-wrap">
+              <img src="images/2.Microsoft Data Visualization.png" alt="Microsoft Data Visualization Certificate" loading="lazy" />
+              <div class="cert-img-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Tableau -->
+        <div id="cert3" class="cert-card">
+          <div class="cert-card-bar"></div>
+          <div class="cert-card-inner">
+            <div class="cert-card-header">
+              <div class="cert-issuer-badge badge-tableau">T</div>
+              <div class="cert-title-wrap">
+                <h3>Tableau Data Visualization</h3>
+                <div class="cert-meta-row">
+                  <i class="fas fa-building"></i> UC Davis &nbsp;·&nbsp;
+                  <i class="fas fa-calendar"></i> Nov 7, 2025 &nbsp;·&nbsp;
+                  <i class="fas fa-layer-group"></i> Specialization
+                </div>
+              </div>
+              <a href="https://coursera.org/verify/specialization/E0XEL6TZSI6L" target="_blank" class="cert-verify-link">
+                <i class="fas fa-external-link-alt"></i> Verify
+              </a>
+            </div>
+            <div class="cert-chips">
+              <span class="chip">Tableau</span>
+              <span class="chip">Visual Analytics</span>
+              <span class="chip">EDA</span>
+              <span class="chip">Dashboard Design</span>
+              <span class="chip">Storyboards</span>
+              <span class="chip">Interactive Viz</span>
+            </div>
+            <div class="cert-img-wrap">
+              <img src="images/3.Data Visualization with Tableau.png" alt="Tableau Data Visualization Certificate" loading="lazy" />
+              <div class="cert-img-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Statistics with Python -->
+        <div id="cert4" class="cert-card">
+          <div class="cert-card-bar"></div>
+          <div class="cert-card-inner">
+            <div class="cert-card-header">
+              <div class="cert-issuer-badge badge-michigan">M</div>
+              <div class="cert-title-wrap">
+                <h3>Statistics with Python</h3>
+                <div class="cert-meta-row">
+                  <i class="fas fa-building"></i> Michigan &nbsp;·&nbsp;
+                  <i class="fas fa-calendar"></i> Dec 19, 2025 &nbsp;·&nbsp;
+                  <i class="fas fa-layer-group"></i> Specialization
+                </div>
+              </div>
+              <a href="https://coursera.org/verify/specialization/G5L9VBUZNH6A" target="_blank" class="cert-verify-link">
+                <i class="fas fa-external-link-alt"></i> Verify
+              </a>
+            </div>
+            <div class="cert-chips">
+              <span class="chip">Statistics</span>
+              <span class="chip">Sampling</span>
+              <span class="chip">Bayesian Inference</span>
+              <span class="chip">Statistical Modeling</span>
+              <span class="chip">Probability</span>
+            </div>
+            <div class="cert-img-wrap">
+              <img src="images/4.Statistics with Python.png" alt="Statistics with Python Certificate" loading="lazy" />
+              <div class="cert-img-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. IBM Data Analysis -->
+        <div id="cert5" class="cert-card">
+          <div class="cert-card-bar"></div>
+          <div class="cert-card-inner">
+            <div class="cert-card-header">
+              <div class="cert-issuer-badge badge-ibm">I</div>
+              <div class="cert-title-wrap">
+                <h3>Data Analysis with Python – IBM</h3>
+                <div class="cert-meta-row">
+                  <i class="fas fa-building"></i> IBM &nbsp;·&nbsp;
+                  <i class="fas fa-calendar"></i> Dec 26, 2025 &nbsp;·&nbsp;
+                  <i class="fas fa-award"></i> Professional Certificate
+                </div>
+              </div>
+              <a href="https://coursera.org/verify/C6SZD2TL1XW8" target="_blank" class="cert-verify-link">
+                <i class="fas fa-external-link-alt"></i> Verify
+              </a>
+            </div>
+            <div class="cert-chips">
+              <span class="chip">Pandas</span>
+              <span class="chip">NumPy</span>
+              <span class="chip">Data Cleaning</span>
+              <span class="chip">Matplotlib</span>
+              <span class="chip">Seaborn</span>
+              <span class="chip">EDA</span>
+            </div>
+            <div class="cert-img-wrap">
+              <img src="images/5.Data Analysis with Python.png" alt="IBM Data Analysis with Python Certificate" loading="lazy" />
+              <div class="cert-img-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Google AI Essentials -->
+        <div id="cert6" class="cert-card">
+          <div class="cert-card-bar"></div>
+          <div class="cert-card-inner">
+            <div class="cert-card-header">
+              <div class="cert-issuer-badge badge-google">G</div>
+              <div class="cert-title-wrap">
+                <h3>Google AI Essentials</h3>
+                <div class="cert-meta-row">
+                  <i class="fas fa-building"></i> Google &nbsp;·&nbsp;
+                  <i class="fas fa-calendar"></i> Dec 15, 2025 &nbsp;·&nbsp;
+                  <i class="fas fa-layer-group"></i> Specialization
+                </div>
+              </div>
+              <a href="https://coursera.org/verify/specialization/MNTFVVP70S3R" target="_blank" class="cert-verify-link">
+                <i class="fas fa-external-link-alt"></i> Verify
+              </a>
+            </div>
+            <div class="cert-chips">
+              <span class="chip">Prompt Engineering</span>
+              <span class="chip">AI Workflows</span>
+              <span class="chip">LLM</span>
+              <span class="chip">Automation</span>
+              <span class="chip">AI Ethics</span>
+            </div>
+            <div class="cert-img-wrap">
+              <img src="images/6.Google AI Essentials.png" alt="Google AI Essentials Certificate" loading="lazy" />
+              <div class="cert-img-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Tutedude — full width last card -->
+        <div id="cert7" class="cert-card" style="grid-column: 1 / -1; max-width: 680px; margin: 0 auto; width: 100%;">
+          <div class="cert-card-bar"></div>
+          <div class="cert-card-inner">
+            <div class="cert-card-header">
+              <div class="cert-issuer-badge badge-tuted">Tu</div>
+              <div class="cert-title-wrap">
+                <h3>Tutedude Data Analytics</h3>
+                <div class="cert-meta-row">
+                  <i class="fas fa-building"></i> Tutedude &nbsp;·&nbsp;
+                  <i class="fas fa-calendar"></i> Nov 11, 2025 &nbsp;·&nbsp;
+                  <i class="fas fa-award"></i> Certificate
+                </div>
+              </div>
+              <a href="https://upskill.tutedude.com/certificate/TD-AKAS-DA-1514" target="_blank" class="cert-verify-link">
+                <i class="fas fa-external-link-alt"></i> Verify
+              </a>
+            </div>
+            <div class="cert-chips">
+              <span class="chip">Advanced Excel</span>
+              <span class="chip">SQL</span>
+              <span class="chip">Python</span>
+              <span class="chip">Data Cleaning</span>
+              <span class="chip">Visualization</span>
+            </div>
+            <div class="cert-img-wrap">
+              <img src="images/7.Data Analyst TUTEDUDE.png" alt="Tutedude Data Analytics Certificate" loading="lazy" />
+              <div class="cert-img-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cert-grid -->
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
   <footer>
-    <p>© 2026 Akash Raj — Achievements & Certifications</p>
-    <div class="footer-icons">
-      <a href="https://akashrajhub.github.io/"><i class="fas fa-home"></i></a>
-      <a href="https://github.com/akashrajhub" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/akash-raj-profile/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-section">
+          <h3>Get In Touch</h3>
+          <a href="mailto:akashraj.dev@outlook.com"><i class="fas fa-envelope" style="margin-right:0.4rem;"></i>akashraj.dev@outlook.com</a>
+          <a href="https://wa.me/919572085220" target="_blank"><i class="fab fa-whatsapp" style="margin-right:0.4rem;color:#4ade80;"></i>+91 95720 85220</a>
+        </div>
+        <div class="footer-section">
+          <h3>Location</h3>
+          <p><i class="fas fa-map-marker-alt" style="margin-right:0.4rem;"></i>Delhi NCR, India</p>
+          <p><i class="fas fa-globe" style="margin-right:0.4rem;"></i>Remote & Worldwide 🌍</p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <a href="https://www.linkedin.com/in/akash-raj-profile/" target="_blank"><i class="fab fa-linkedin" style="margin-right:0.4rem;"></i>LinkedIn</a>
+          <a href="https://github.com/akashrajhub" target="_blank"><i class="fab fa-github" style="margin-right:0.4rem;"></i>GitHub</a>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="https://akashrajhub.github.io/">Portfolio Home</a>
+          <a href="https://akashrajhub.github.io/#projects">Projects</a>
+          
+        </div>
+      </div>
+      <div class="footer-copy">
+        <span>© 2025 Akash Raj · Data Analyst Portfolio</span>
+        <span>Built with care · Hosted on GitHub Pages</span>
+      </div>
     </div>
   </footer>
 
   <script>
-    /* Scroll Reveal Animation */
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add("visible");
-            }, index * 120);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+    // Header scroll shadow
+    const hdr = document.getElementById('site-header');
+    window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 60));
 
-    document.querySelectorAll(".section-card, .cert-card").forEach((sec) =>
-      observer.observe(sec)
-    );
+    // Scroll reveal
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = `${(i % 4) * 0.08}s`;
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.reveal, .cert-card').forEach(el => revealObs.observe(el));
   </script>
 
 </body>
 </html>
-
