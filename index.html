@@ -260,11 +260,13 @@
     .cert-card:nth-child(8) .cert-card-bar { background: linear-gradient(90deg, #2563eb, #38bdf8); }
     .cert-card:nth-child(9) .cert-card-bar { background: linear-gradient(90deg, #059669, #2563eb); }
     .cert-card:nth-child(10) .cert-card-bar { background: linear-gradient(90deg, #d97706, #f59e0b); }
+    .cert-card:nth-child(11) .cert-card-bar { background: linear-gradient(90deg, #ea580c, #f97316); }
+    .cert-card:nth-child(12) .cert-card-bar { background: linear-gradient(90deg, #4f46e5, #7c3aed); }
 
     .cert-card-inner { padding: 1.75rem; display: flex; flex-direction: column; flex: 1; }
 
     .cert-card-header {
-      display: flex; align-items: flex-start; gap: 1rem;
+      display: flex; align-items: flex-start; gap: 0.85rem;
       margin-bottom: 1rem;
     }
     .cert-issuer-badge {
@@ -283,6 +285,8 @@
     .badge-ibm     { background: #e1f5fe; color: #01579b; }
     .badge-deepmind { background: #e8eaf6; color: #1a237e; }
     .badge-tuted   { background: #fff8e1; color: #e65100; }
+    .badge-packt   { background: #fff3e0; color: #c2410c; }
+    .badge-henry   { background: #ede9fe; color: #4c1d95; }
 
     .cert-title-wrap { flex: 1; min-width: 0; }
     .cert-title-wrap h3 {
@@ -292,8 +296,12 @@
       margin-bottom: 0.25rem;
     }
     .cert-meta-row {
-      display: flex; align-items: center; gap: 0.5rem;
-      font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap;
+      display: flex; align-items: center; gap: 0.32rem;
+      font-size: 0.76rem; color: var(--text-muted); flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+    @media (max-width: 520px) {
+      .cert-meta-row { flex-wrap: wrap; white-space: normal; }
     }
     .cert-meta-row i { font-size: 0.7rem; color: var(--primary); }
     .cert-verify-link {
@@ -308,6 +316,17 @@
       margin-left: auto;
     }
     .cert-verify-link:hover { background: var(--primary); color: white; border-color: var(--primary); }
+    .cert-id-badge {
+      font-size: 0.72rem; font-weight: 600;
+      color: var(--text-muted);
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.2rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: var(--white);
+      margin-left: auto;
+      white-space: nowrap;
+    }
 
     /* Skill chips */
     .cert-chips {
@@ -448,7 +467,7 @@
         <i class="fas fa-shield-check"></i> All credentials verified
       </div>
       <h1>Certifications &<br><span>Achievements</span></h1>
-      <p>10 verified credentials from Google, Google DeepMind, Wharton, Microsoft, IBM, and more.</p>
+      <p>12 verified credentials from Google, Google DeepMind, Wharton, Microsoft, IBM, and more.</p>
     </div>
   </section>
 
@@ -456,11 +475,11 @@
   <div class="stats-strip">
     <div class="container">
       <div class="stat-item reveal">
-        <div class="stat-number">10</div>
+        <div class="stat-number">12</div>
         <div class="stat-label">Verified Certifications</div>
       </div>
       <div class="stat-item reveal">
-        <div class="stat-number">8</div>
+        <div class="stat-number">10</div>
         <div class="stat-label">Issuing Organizations</div>
       </div>
       <div class="stat-item reveal">
@@ -522,6 +541,14 @@
         <a href="#cert10" class="toc-item">
           <span class="toc-num">10</span>
           <div>Tutedude Data Analytics – Certificate<span class="toc-issuer">Tutedude · Nov 2025</span></div>
+        </a>
+        <a href="#cert11" class="toc-item">
+          <span class="toc-num">11</span>
+          <div>Official Next.js Tutorial – React Web Dev<span class="toc-issuer">Packt · Aug 2026</span></div>
+        </a>
+        <a href="#cert12" class="toc-item">
+          <span class="toc-num">12</span>
+          <div>Certified Medical Coder (CMC)<span class="toc-issuer">Henry Harvin · Sep 2023</span></div>
         </a>
       </div>
     </div>
@@ -725,6 +752,7 @@
             <div class="cert-chips">
               <span class="chip">Pandas</span>
               <span class="chip">NumPy</span>
+              <span class="chip">Machine Learning</span>
               <span class="chip">Data Cleaning</span>
               <span class="chip">Matplotlib</span>
               <span class="chip">Seaborn</span>
@@ -761,6 +789,7 @@
               <span class="chip">LLM</span>
               <span class="chip">Automation</span>
               <span class="chip">AI Ethics</span>
+              <span class="chip">AI Integrations</span>
             </div>
             <div class="cert-img-wrap">
               <img src="images/7. Google AI Essentials.png" alt="Google AI Essentials Certificate" loading="lazy" />
@@ -859,9 +888,76 @@
               <span class="chip">Python</span>
               <span class="chip">Data Cleaning</span>
               <span class="chip">Visualization</span>
+              <span class="chip">Power BI</span>
             </div>
             <div class="cert-img-wrap">
               <img src="images/10. Data Analyst TUTEDUDE.png" alt="Tutedude Data Analytics Certificate" loading="lazy" />
+              <div class="cert-img-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Packt Next.js -->
+        <div id="cert11" class="cert-card">
+          <div class="cert-card-bar"></div>
+          <div class="cert-card-inner">
+            <div class="cert-card-header">
+              <div class="cert-issuer-badge badge-packt">P</div>
+              <div class="cert-title-wrap">
+                <h3>Official Next.js Tutorial — React Web Dev</h3>
+                <div class="cert-meta-row">
+                  <i class="fas fa-building"></i> Packt &nbsp;·&nbsp;
+                  <i class="fas fa-calendar"></i> Aug 19, 2026 &nbsp;·&nbsp;
+                  <i class="fas fa-award"></i> Certificate
+                </div>
+              </div>
+              <a href="https://coursera.org/verify/Z0UDQGH4DBOS" target="_blank" class="cert-verify-link">
+                <i class="fas fa-external-link-alt"></i> Verify
+              </a>
+            </div>
+            <div class="cert-chips">
+              <span class="chip">Next.js</span>
+              <span class="chip">React.js</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">SSR / SSG</span>
+              <span class="chip">Performance Tuning</span>
+              <span class="chip">GitHub</span>
+            </div>
+            <div class="cert-img-wrap">
+              <img src="images/11. Official Next Js Tutorial Code Along - React Web Development.png" alt="Packt Official Next.js Tutorial Certificate" loading="lazy" />
+              <div class="cert-img-overlay"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. Henry Harvin CMC -->
+        <div id="cert12" class="cert-card">
+          <div class="cert-card-bar"></div>
+          <div class="cert-card-inner">
+            <div class="cert-card-header">
+              <div class="cert-issuer-badge badge-henry">HH</div>
+              <div class="cert-title-wrap">
+                <h3>Certified Medical Coder (CMC)</h3>
+                <div class="cert-meta-row">
+                  <i class="fas fa-building"></i> Henry Harvin &nbsp;·&nbsp;
+                  <i class="fas fa-calendar"></i> Sep 11, 2023 &nbsp;·&nbsp;
+                  <i class="fas fa-award"></i> Certificate
+                </div>
+              </div>
+              <span class="cert-id-badge" title="Certificate No: 10693/HH/1608">
+                <i class="fas fa-id-card"></i> ID: 10693/HH/1608
+              </span>
+            </div>
+            <div class="cert-chips">
+              <span class="chip">ICD-10-CM</span>
+              <span class="chip">CPT</span>
+              <span class="chip">HCPCS</span>
+              <span class="chip">Medical Coding</span>
+              <span class="chip">HIPAA</span>
+              <span class="chip">Healthcare Compliance</span>
+            </div>
+            <div class="cert-img-wrap">
+              <img src="images/12. Henry Harvin Education Certificate.png" alt="Henry Harvin Certified Medical Coder Certificate" loading="lazy" />
               <div class="cert-img-overlay"></div>
             </div>
           </div>
